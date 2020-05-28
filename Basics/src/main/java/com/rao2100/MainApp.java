@@ -16,7 +16,7 @@ public class MainApp {
     
     public static void main(String[] args) {
 
-        TestEnum.test();
+        // TestEnum.test();
         TestDateTime.testAllVals();
     }    
     
