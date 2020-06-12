@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import com.rao2100.enums.*;
 import com.rao2100.datetime.*;
 import com.rao2100.nashorn.*;
+import com.rao2100.abstraction.*;
 
 public class MainApp {
     
@@ -19,8 +20,11 @@ public class MainApp {
 
         // TestEnum.test();
         // TestDateTime.testAllVals();
-        TestNashorn testNashorn = new TestNashorn();
-        testNashorn.runScript();        
+        // TestNashorn testNashorn = new TestNashorn();
+        // testNashorn.runScript();       
+        
+        TestAbstraction testAbstraction = new TestAbstraction();
+        testAbstraction.runTest();;
     }    
     
 }
