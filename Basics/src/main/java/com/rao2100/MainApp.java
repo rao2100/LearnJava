@@ -11,13 +11,16 @@ import java.util.ArrayList;
 
 import com.rao2100.enums.*;
 import com.rao2100.datetime.*;
+import com.rao2100.nashorn.*;
 
 public class MainApp {
     
     public static void main(String[] args) {
 
         // TestEnum.test();
-        TestDateTime.testAllVals();
+        // TestDateTime.testAllVals();
+        TestNashorn testNashorn = new TestNashorn();
+        testNashorn.runScript();        
     }    
     
 }
