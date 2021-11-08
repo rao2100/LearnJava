@@ -18,13 +18,8 @@ public class MainApp {
     
     public static void main(String[] args) {
 
-        // TestEnum.test();
-        // TestDateTime.testAllVals();
-        // TestNashorn testNashorn = new TestNashorn();
-        // testNashorn.runScript();       
-        
-        TestAbstraction testAbstraction = new TestAbstraction();
-        testAbstraction.runTest();;
+        System.out.println("MainApp");
+
     }    
     
 }

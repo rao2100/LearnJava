@@ -1,33 +1,17 @@
 
 package com.rao2100.datetime;
 
-import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.TimeZone;
 import java.util.ArrayList;
+import java.util.List;
 
 
-public class TestDateTime {
+public class DateTimeExperiment {
 
-    public static void testAllVals() {
-        
-        // LocalDateTime dateBefore = LocalDateTime.of(2020, 06, 30, 00, 00);
-        // for (int i = 0; i < 365; i++) {
-        //     System.out.println(getDate(dateBefore.minusDays(i)));            
-        // }
-        
-        getWindowBoundries();
-        
-    }
 
     private static String getDate(LocalDateTime dateBefore) {
         
@@ -43,7 +27,7 @@ public class TestDateTime {
         return dateBefore.format(DateTimeFormatter.ofPattern(functionInput.get(3).trim()));
     }
 
-    private static void getWindowBoundries(){
+    public static void getWindowBoundries(){
 
         // Duration size = Duration.ofMinutes(5);
         // Duration size = Duration.ofHours(1);

@@ -1,10 +1,14 @@
 package com.rao2100.abstraction;
 
-public class TestAbstraction {
+import com.rao2100.nashorn.NashornCalculate;
+import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
 
-    public void runTest(){
+class SprintTaskTest {
 
+    @Test
+    void sprintTaskDoAction() {
         BaseTask task = new RunTask();
         task.start();
         task = new JogTask();
@@ -12,6 +16,6 @@ public class TestAbstraction {
         task = new SprintTask();
         task.start();
 
-    }    
-    
+    }
+
 }
