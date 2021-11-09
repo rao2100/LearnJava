@@ -1,0 +1,4 @@
+module bookingsystem {
+
+    exports scheduling;
+}
