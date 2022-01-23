@@ -1,6 +1,8 @@
 package com.rao2100.producer;
 
 import java.io.InputStream;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
@@ -61,7 +63,7 @@ public class ProducerJsonUser {
             e.printStackTrace();
         }
 
-        System.out.println(jsonNodeValue.toString());
+//        System.out.println(jsonNodeValue.toString());
 
         String schemaFilePath = "ccs-value-schema.json";
         JsonNode schema = readFileToJsonNode(schemaFilePath);
@@ -69,25 +71,29 @@ public class ProducerJsonUser {
 
         JsonNode jsonNodeValueWithSchema = getEnvelope("ccs-value-schema.json", jsonNodeValue);
 
-        System.out.println(jsonNodeValueWithSchema.toString());
+//        System.out.println(jsonNodeValueWithSchema.toString());
 
 
-//        for (int i = 0; i < 1000 ; i++) {
-//
-//        }
 
-        ProducerRecord<String, JsonNode> record
-                = new ProducerRecord<String, JsonNode>(topic, key, jsonNodeValueWithSchema);
-
-        try {
-            producer.send(record).get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
+        Instant start = Instant.now();
+        for (int i = 0; i < 10000 ; i++) {
+            ProducerRecord<String, JsonNode> record = new ProducerRecord<>(topic, String.valueOf(i), jsonNodeValueWithSchema);
+//            try {
+                producer.send(record);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            } catch (ExecutionException e) {
+//                e.printStackTrace();
+//            }
         }
+
+        Instant finish = Instant.now();
+        long timeElapsed = Duration.between(start, finish).toMillis();
+
         producer.flush();
         producer.close();
+
+        System.out.println("Time elapsed: " + timeElapsed);
 
 
     }
